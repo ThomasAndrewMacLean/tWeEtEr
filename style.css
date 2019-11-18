@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+
+}
+
+body,
+html {
+    height: 100%;
+    width: 100vw;
+    overflow: hidden;
+}
+
+html {
+    background: url("./static/benjamin-balazs-PgLOQTUsy1c-unsplash.jpg") no-repeat center center fixed;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    font-size: 20px;
+    color: rgb(20, 23, 26);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 350px;
+    margin: 5rem auto;
+    padding: 1rem;
+    border-radius: 20px;
+    background: #FFFFFF;
+}
+
+textarea,
+input {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+textarea {
+    resize: none;
+    /* overflow: hidden; */
+    border: none;
+    padding: 10px;
+    line-height: 1.3125;
+    outline: none;
+}
+
+.wrap-text-area {
+    position: relative;
+    margin-bottom: 1rem;
+    display: inherit;
+}
+
+.wrap-text-area::after {
+    content: '';
+    position: absolute;
+    width: calc(100% + 2rem);
+    bottom: 0;
+    left: -1rem;
+    height: 1px;
+    background: rgb(204, 214, 221);
+}
+
+input {
+    display: block;
+    background: #55acee;
+    color: #FFFFFF;
+    padding: 1rem;
+    border-radius: 50vw;
+    cursor: pointer;
+    border: none;
+    flex-grow: 1;
+}
+
+.wrap-buttons {
+    display: flex;
+}
+
+.counter {
+    margin-right: 20px;
+    border: 6px solid rgb(204, 214, 221);
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: block;
+    position: relative;
+}
+
+.counter {
+    --colour-left: rgb(204, 214, 221);
+    --colour-right: #55acee;
+    --rotate-left: "0deg";
+    --rotate-right: "180deg";
+}
+
+.left::after {
+    border-radius: 100% 0 0 100% / 50% 0 0 50%;
+    content: '';
+
+    height: calc(100% + 12px);
+    width: calc(50% + 6px);
+    left: -6px;
+    border: 6px solid var(--colour-left);
+    border-right: none;
+    z-index: 1;
+    position: absolute;
+    top: -6px;
+    transform-origin: right;
+    transform: rotate(var(--rotate-left));
+
+}
+
+.right::after {
+    border-radius: 100% 0 0 100% / 50% 0 0 50%;
+    content: '';
+    height: calc(100% + 12px);
+    width: calc(50% + 6px);
+    left: -6px;
+    border: 6px solid var(--colour-right);
+    border-right: none;
+    position: absolute;
+    top: -6px;
+
+    transform: rotate(var(--rotate-right));
+    transform-origin: right;
+}
