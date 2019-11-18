@@ -5,9 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>tWeEteR</title>
+    <title>tWiEtEr</title>
     <link rel="icon" type="image/png" href="./static/favicon.ico">
     <link rel="stylesheet" href="./style.css">
+    <meta name="Description" content="sEnD tWeEtS!">
+    <meta name="theme-color" content="#55acee" />
+
+    <link rel="manifest" href="./static/site.webmanifest">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@7homa5m" />
+    <meta name="twitter:creator" content="@7homa5m" />
+    <meta property="og:title" content="tWiEtEr" />
+    <meta property="og:url" content="https://tWiEtEr.ga/" />
+    <meta property="og:description" content="sEnD tWeEtS!">
+    <meta property="og:image" content="https://tWiEtEr.ga/static/android-chrome-192x192.png">
 </head>
 
 <body>
@@ -26,6 +37,22 @@
             </div>
         </form>
     </div>
+    <script>
+        window.addEventListener('load', () => {
+            if (!('serviceWorker' in navigator)) {
+                // service workers not supported 😣
+                return
+            }
+            navigator.serviceWorker.register('/sw.js').then(
+                () => {
+                    // registered! 👍🏼
+                },
+                err => {
+                    console.error('SW registration failed! 😱', err)
+                }
+            )
+        });
+    </script>
     <script src="./script.js"></script>
 </body>
 

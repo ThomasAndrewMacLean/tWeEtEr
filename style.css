@@ -87,6 +87,7 @@ input {
 
 .wrap-buttons {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .counter {
