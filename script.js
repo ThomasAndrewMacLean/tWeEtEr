@@ -23,7 +23,7 @@ tweetTextArea.setAttribute("maxlength", MAX_NUMBER)
 tweetTextArea.addEventListener("keyup", (e) => {
     const lengthTweet = tweetTextArea.value.length
     const percentageTweet = (lengthTweet/MAX_NUMBER * 100)
-    console.log(percentageTweet, (percentageTweet * 2 * 180 / 100))
+    //console.log(percentageTweet, (percentageTweet * 2 * 180 / 100))
 
     if(percentageTweet<=50){
         counter.style
